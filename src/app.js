@@ -2,14 +2,13 @@ require('custom-env').env();
 const program = require('commander');
 const pictureOfTheDay = require('./actions/pictureOfTheDay');
 const downloader = require('./actions/downloader');
+const {hubblePicture, downloadPicture} = require('./actions/hubblePicture');
 
 program
     .version('0.1.0')
-    .option('-p, --pic', 'Picture of The Day')
-    .option('-g, --galaxy', 'Random Galaxy Picture')
-    .option('-n, --nebula', 'Random Nebula Picture')
+    .option('-a, --interactive', 'Interactive Mode')
+    .option('-p, --potd', 'Picture of The Day from Nasa')
+    .option('--hubble', 'Random Picture from Hubble Api')
     .parse(process.argv);
 
-if (program.pic) {
-    pictureOfTheDay().then(downloader)
-}
+hubblePicture().then(downloadPicture);

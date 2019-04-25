@@ -15,6 +15,7 @@
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
     "custom-env": "^1.0.0",
-    "libnotify": "^1.0.4"
+    "libnotify": "^1.0.4",
+    "pkg": "^4.3.7"
   }
 }
